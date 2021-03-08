@@ -1,0 +1,38 @@
+POST http://localhost:4000/signup
+Content-Type: application/json
+
+{
+    "name":"abcd",
+    "age":25,
+    "email":"abcd@gmail.com",
+    "username":"my abcd",
+    "password":"abcde"
+}
+
+###
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "username":"avinash ch",
+    "password":"avinash123"
+}
+
+###
+POST http://localhost:4000/logout
+Content-Type: application/json
+
+{
+    "username":"sandeep ch",
+    "password":"sandeep123"
+}
+
+###
+POST http://localhost:4000/createtask
+
+Content-Type: application/json
+
+{
+    "des":"abc",
+    "stat":"Not completed..."
+}
