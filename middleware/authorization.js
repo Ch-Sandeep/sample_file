@@ -11,7 +11,7 @@ async function authenticateToken(req, res, next) {
   try {
     const user = await User.findOne({ token: acctoken });
     if (user == undefined) {
-      return res.send("Session expired.Please login again...");
+      res.redirect("/login")
     }
     if (acctoken == null) {
       return res.send("Something went wrong...");

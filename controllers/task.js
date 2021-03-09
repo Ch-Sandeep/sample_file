@@ -49,7 +49,7 @@ module.exports.gettask = async (req, res) => {
     const u = await User.findOne({ username: req.dbuser.username });
     const t = await Task.findOne({
       owner: u._id,
-      description: req.params.desc,
+      description: req.body.desc,
     });
     if (t == null) {
       return res.send("No task exists with given description...");

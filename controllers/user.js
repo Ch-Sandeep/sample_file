@@ -62,7 +62,7 @@ module.exports.login = async (req, res) => {
         { $set: { token: accesstoken } }
       );
       res.cookie("jwt", accesstoken, {
-        //expires: new Date(Date.now() + 3000000),
+        expires: new Date(Date.now() + 3000000),
         httpOnly: true,
       });
       res.redirect("/home");
@@ -158,6 +158,7 @@ module.exports.logout = async (req, res) => {
         { username: pruser.username },
         { $set: { token: undefined } }
       );
+      req.cookies.jwt= null;
       res.redirect("/login");
     } else {
       res.send("User already logged out...");

@@ -111,14 +111,6 @@ app.get("/logout",authenticateToken,(req,res)=>{
   res.render("logout")
 })
 
-app.get("/createtask",authenticateToken,(req,res)=>{
-  res.render("createtask")
-})
-
-app.get("/listtasks",authenticateToken,(req,res)=>{
-  res.render("listtasks")
-})
-
 app.post("/getuser", authenticateToken, userfun.getuser);
 
 app.patch("/updateuser", authenticateToken, userfun.updateuser);
@@ -129,13 +121,29 @@ app.post("/logout", authenticateToken, userfun.logout);
 
 //...........CRUD OPERATIONS ON TASK................
 
+app.get("/createtask",authenticateToken,(req,res)=>{
+  res.render("createtask")
+})
+
 app.post("/createtask", authenticateToken, taskfun.createtask);
 
 app.get("/listtasks", authenticateToken, taskfun.listtasks);
 
-app.get("/gettask/:desc", authenticateToken, taskfun.gettask);
+app.get("/gettask",authenticateToken,(req,res)=>{
+  res.render("gettask")
+})
+
+app.post("/gettask", authenticateToken, taskfun.gettask);
+
+app.get("/updatetask",authenticateToken,(req,res)=>{
+  res.render("updatetask")
+})
 
 app.post("/updatetask", authenticateToken, taskfun.updatetask);
+
+app.get("/deletetask",authenticateToken,(req,res)=>{
+  res.render("deletetask")
+})
 
 app.post("/deletetask", authenticateToken, taskfun.deletetask);
 
@@ -146,3 +154,5 @@ app.get("*", (req, res) => {
 const port = process.env.PORT || 4000;
 
 https.createServer(options, app).listen(port);
+
+module.exports=app;
