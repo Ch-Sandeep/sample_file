@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Update fields that you want</h1>
+    <form action="/updateuser" method="POST" enctype="multipart/form-data">
+        <div class="inputBox">
+            <input type="text" name="name">
+            <label>Name</label>
+        </div>
+        <div class="inputBox">
+            <input type="number" name="age">
+            <label>Age</label>
+        </div>
+        <div class="inputBox">
+            <input type="email" name="email">
+            <label>E-mail</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="username">
+            <label>username</label>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="password">
+            <label>password</label>
+        </div>
+        <div class="inputBox">
+            <input type="file" name="image" value="Image">
+            <label>Image</label>
+        </div>
+        <input type="submit" name="submit" value="Update">
+</body>
+
+</html>
